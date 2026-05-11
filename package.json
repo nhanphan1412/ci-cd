@@ -2,11 +2,17 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=9"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm lint && pnpm typecheck && pnpm build"
   },
   "dependencies": {
     "next": "16.2.6",
